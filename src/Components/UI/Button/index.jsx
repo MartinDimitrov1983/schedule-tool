@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button as MuiButton } from '@mui/material';
 import PropTypes from 'prop-types';
+import { Button as MuiButton } from '@mui/material';
 import { styles } from './styles';
 
 const Button = ({
@@ -30,6 +30,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   color: PropTypes.string,
   onClick: PropTypes.func,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
 };
 
 export default Button;

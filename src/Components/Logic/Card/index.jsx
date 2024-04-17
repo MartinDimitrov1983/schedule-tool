@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, Typography } from '@mui/material';
 import { DayTimes, Button } from '../..';
@@ -91,6 +92,14 @@ const Card = ({ day, date, dayIndex, isTemplate, autoCompleteData }) => {
       )}
     </Box>
   );
+};
+
+Card.propTypes = {
+  day: PropTypes.string,
+  date: PropTypes.string,
+  dayIndex: PropTypes.number,
+  isTemplate: PropTypes.bool,
+  autoCompleteData: PropTypes.array,
 };
 
 export default Card;

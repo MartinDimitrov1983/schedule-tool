@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box, Typography } from '@mui/material';
 import { DatePicker } from '../..';
@@ -71,6 +72,13 @@ const DateSelector = ({
       </Box>
     </Box>
   );
+};
+
+DateSelector.propTypes = {
+  backHandler: PropTypes.func,
+  forwardHandler: PropTypes.func,
+  startDateCount: PropTypes.number,
+  endDateCount: PropTypes.number,
 };
 
 export default DateSelector;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { Box } from '@mui/material';
 import { Button } from '../../';
@@ -47,6 +48,15 @@ const MainButtons = ({
       />
     </Box>
   );
+};
+
+MainButtons.propTypes = {
+  resetHandler: PropTypes.func,
+  mouseEnterhandler: PropTypes.func,
+  mouseLeaveHadler: PropTypes.func,
+  autoCompleteHandler: PropTypes.func,
+  uploadHandler: PropTypes.func,
+  isAutoCompletePressed: PropTypes.bool,
 };
 
 export default MainButtons;

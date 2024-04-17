@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Close } from '../../../Assets';
 import { TimePicker as DefaultTimePicker } from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
@@ -28,7 +29,7 @@ const TimePicker = ({
         clearIcon={null}
         disableClock
       />
-      {value && (
+      {value && isCompleted && (
         <Close
           className={`${styles.icon} ${className}`}
           onClick={onRemoveClick}
@@ -36,6 +37,14 @@ const TimePicker = ({
       )}
     </div>
   );
+};
+
+TimePicker.propTypes = {
+  isTemplate: PropTypes.bool,
+  isCompleted: PropTypes.bool,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  onRemoveClick: PropTypes.func,
 };
 
 export default TimePicker;

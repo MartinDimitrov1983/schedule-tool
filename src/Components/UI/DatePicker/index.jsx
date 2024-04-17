@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 import { DatePicker as DefaultDatePicker } from 'react-date-picker';
 import 'react-date-picker/dist/DatePicker.css';
@@ -25,6 +26,12 @@ const DatePicker = ({ title, onChange, date }) => {
       />
     </Box>
   );
+};
+
+DatePicker.propTypes = {
+  title: PropTypes.string,
+  onChange: PropTypes.func,
+  date: PropTypes.instanceOf(Date),
 };
 
 export default DatePicker;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Typography, Dialog, DialogContent } from '@mui/material';
 import { Button } from '../..';
 import { CREATE_PLAN, MAGENTA, CREATED_SUCCESSFULLY } from '../../../Constants';
@@ -21,6 +22,11 @@ const CustomDialog = ({ isOpen, setIsOpen }) => {
       </DialogContent>
     </Dialog>
   );
+};
+
+CustomDialog.propTypes = {
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
 };
 
 export default CustomDialog;
