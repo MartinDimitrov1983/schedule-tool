@@ -1,0 +1,13 @@
+.datePicker {
+  width: 100%;
+  min-height: 50px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.datePicker > div > div > input:invalid {
+  background: white;
+}
+.datePicker > div > div > input:focus-visible {
+  border: none;
+}

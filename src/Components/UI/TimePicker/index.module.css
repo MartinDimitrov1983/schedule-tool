@@ -1,0 +1,76 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+.wrapper {
+  border: 1px solid;
+  width: 100%;
+  /* min-width: 150px; */
+  min-height: 40px;
+  background-color: white;
+}
+
+.wrapper div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.template {
+  border-color: #e11bb6;
+  fill: #e11bb6;
+}
+
+.autoComplete {
+  border-color: #acacac;
+  fill: #acacac;
+}
+.completed {
+  fill: black;
+}
+
+.template > div {
+  border: none;
+}
+
+.template input {
+  color: #e11bb6;
+}
+
+.autoComplete input {
+  color: #acacac;
+}
+
+.template input:invalid {
+  background: white !important;
+}
+
+.template input::placeholder {
+  color: #e11bb6;
+}
+.template span {
+  color: #e11bb6;
+}
+
+.autoComplete span {
+  color: #acacac;
+}
+
+.wrapper button {
+  position: absolute;
+  right: -4px;
+}
+.wrapper div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  /* fill: #acacac; */
+  position: absolute;
+  right: 7px;
+  top: 11px;
+}
