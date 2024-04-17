@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /crypto-app
+WORKDIR /schedule-tool
 
 COPY package*.json ./
 

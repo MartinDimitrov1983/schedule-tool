@@ -31,7 +31,8 @@ const Days = ({
             daysToShow.length,
             (daysToShow.length / WEEK_LENGTH) * 100,
             showCopies,
-          )}>
+          )}
+        >
           {daysToShow.length > 0 &&
             daysToShow.map((data, index) => {
               return (
@@ -58,7 +59,8 @@ const Days = ({
                   array.length,
                   (array.length / WEEK_LENGTH) * 100,
                   showCopies,
-                )}>
+                )}
+              >
                 {array.map((data, index) => {
                   return (
                     <Card

@@ -23,7 +23,7 @@ const HomePage = () => {
   const [startDateCount, setStartDateCount] = useState(0);
   const [endDateCount, setEndDateCount] = useState(WEEK_LENGTH);
   const [daysToShow, setDaysToShow] = useState([]);
-  const [isAutoCompletePressed, setisAutoCompletePressed] = useState(false);
+  const [isAutoCompleteEnabled, setisAutoCompleteEnabled] = useState(false);
   const templateLength = calculateTemplateLength(times);
   const template = times.slice(0, templateLength) || [];
 
@@ -64,12 +64,12 @@ const HomePage = () => {
   };
 
   const resetHandler = () => {
-    setisAutoCompletePressed(false);
+    setisAutoCompleteEnabled(false);
     dispatch(resetTimes());
   };
 
   const autoCompleteHandler = () => {
-    setisAutoCompletePressed(true);
+    setisAutoCompleteEnabled(true);
     dispatch(autoCompleteTimes(autoCompleteTemplate));
   };
 
@@ -78,6 +78,7 @@ const HomePage = () => {
     localStorage.setItem(`${SCHEDULE_PLAN} ${new Date()}`, data);
     setIsOpen(true);
     dispatch(clearShedule());
+    setisAutoCompleteEnabled(false);
   };
 
   return (
@@ -109,7 +110,7 @@ const HomePage = () => {
           mouseLeaveHadler={mouseLeaveHadler}
           autoCompleteHandler={autoCompleteHandler}
           uploadHandler={uploadHandler}
-          isAutoCompletePressed={isAutoCompletePressed}
+          isAutoCompletePressed={isAutoCompleteEnabled}
         />
       </Box>
     </>

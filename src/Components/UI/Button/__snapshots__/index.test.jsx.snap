@@ -3,12 +3,14 @@
 exports[`Snapshot Button 1`] = `
 <DocumentFragment>
   <button
-    class="button"
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1m39mvv-MuiButtonBase-root-MuiButton-root"
+    tabindex="0"
     type="button"
   >
-    <div>
-      Test
-    </div>
+    Test
+    <span
+      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+    />
   </button>
 </DocumentFragment>
 `;

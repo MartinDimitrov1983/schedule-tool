@@ -16,7 +16,7 @@ test('Snapshot DayTimes', () => {
       dayIndex={0}
       timeIndex={0}
       removeHandler={() => {}}
-      autocompleteData={[]}
+      autocompleteData={''}
     />,
   );
   expect(asFragment()).toMatchSnapshot();

@@ -17,13 +17,13 @@ const Card = ({ day, date, dayIndex, isTemplate, autoCompleteData }) => {
   const [isVisible, setIsVisible] = useState(
     times[dayIndex]?.length > 0 ? false : true,
   );
-  const [addTime, setAddTime] = useState(
+  const [time, setTime] = useState(
     isAutoComplete ? autoCompleteData : times[dayIndex],
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setAddTime(isAutoComplete ? autoCompleteData : times[dayIndex]);
+    setTime(isAutoComplete ? autoCompleteData : times[dayIndex]);
     setIsHovered(times[dayIndex]?.length > 0 || autoCompleteData?.length > 0);
   }, [autoCompleteData, dayIndex, isAutoComplete, times]);
 
@@ -38,14 +38,14 @@ const Card = ({ day, date, dayIndex, isTemplate, autoCompleteData }) => {
   };
 
   const addHandler = () => {
-    setAddTime((prevState) => {
+    setTime((prevState) => {
       const newState = prevState.concat([{ id: `id-${prevState.length + 1}` }]);
       return newState;
     });
   };
 
   const removeHandler = (id, index) => {
-    setAddTime((prevState) => {
+    setTime((prevState) => {
       const newState = prevState.filter((time) => time.id !== id);
       return newState;
     });
@@ -57,14 +57,15 @@ const Card = ({ day, date, dayIndex, isTemplate, autoCompleteData }) => {
       sx={styles.wrapper}
       onClick={clickCardHandler}
       onMouseLeave={mouseLeaveHandler}
-      onMouseEnter={mouseEnterHandler}>
+      onMouseEnter={mouseEnterHandler}
+    >
       <Box sx={styles.header}>
         <Typography sx={styles.day}>{day}</Typography>
         <Typography>{date}</Typography>
       </Box>
       {isHoverd ? (
         <Box sx={styles.body(isVisible && isTemplate)}>
-          {addTime.map((time, index) => {
+          {time.map((time, index) => {
             return (
               <DayTimes
                 key={`${time}-${index}`}

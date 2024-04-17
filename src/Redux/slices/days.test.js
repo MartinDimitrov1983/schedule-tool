@@ -1,90 +1,133 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { todoSlice, getTodos } from './todo';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  daysSlice,
+  changeStartDate,
+  changeEndDate,
+  changeDays,
+  //   changeTime,
+  //   removeTime,
+  autoComplete,
+  setTemplate,
+  resetTimes,
+  autoCompleteTimes,
+  clearShedule,
+} from './days';
 
-// describe('todoSlice', () => {
-//   afterEach(() => {
-//     jest.restoreAllMocks();
-//   });
-//   test('should getTodos return data', async () => {
-//     const data = [
-//       {
-//         title: 'delectus aut autem',
-//         color: '#ffffff',
-//         id: '1-delectus aut autem',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'quis ut nam facilis et officia qui',
-//         color: '#ffffff',
-//         id: '2-quis ut nam facilis et officia qui',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'fugiat veniam minus',
-//         color: '#ffffff',
-//         id: '3-fugiat veniam minus',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'et porro tempora',
-//         color: '#ffffff',
-//         id: '4-et porro tempora',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title:
-//           'laboriosam mollitia et enim quasi adipisci quia provident illum',
-//         color: '#ffffff',
-//         id: '5-laboriosam mollitia et enim quasi adipisci quia provident illum',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'qui ullam ratione quibusdam voluptatem quia omnis',
-//         color: '#ffffff',
-//         id: '6-qui ullam ratione quibusdam voluptatem quia omnis',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'illo expedita consequatur quia in',
-//         color: '#ffffff',
-//         id: '7-illo expedita consequatur quia in',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'quo adipisci enim quam ut ab',
-//         color: '#ffffff',
-//         id: '8-quo adipisci enim quam ut ab',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'molestiae perspiciatis ipsa',
-//         color: '#ffffff',
-//         id: '9-molestiae perspiciatis ipsa',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//       {
-//         title: 'illo est ratione doloremque quia maiores aut',
-//         color: '#ffffff',
-//         id: '10-illo est ratione doloremque quia maiores aut',
-//         isDone: false,
-//         isResolved: false,
-//       },
-//     ];
-//     const store = configureStore({ reducer: todoSlice.reducer });
-//     await store.dispatch(getTodos());
-//     expect(store.getState()).toEqual({
-//       todos: data,
-//       isLoading: false,
-//       error: '',
-//     });
-//   });
-// });
+describe('daysSlice', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+  test('should changeStartDate return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(changeStartDate('2024-04-19'));
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: '2024-04-19',
+      endDate: null,
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+  test('should changeEndDate return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(changeEndDate('2024-04-19'));
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: null,
+      endDate: '2024-04-19',
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+  test('should changeDays return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(changeDays([[], [], [], [], [], [], [], [], [], []]));
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [[], [], [], [], [], [], [], [], [], []],
+      times: [[], [], [], [], [], [], [], [], [], []],
+      startDate: null,
+      endDate: null,
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+  test('should clearShedule return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(clearShedule());
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: null,
+      endDate: null,
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+
+  test('should autoComplete return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(autoComplete(true));
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: null,
+      endDate: null,
+      isAutoComplete: true,
+      template: [],
+      templateLength: 0,
+    });
+  });
+  test('should setTemplate return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(setTemplate({ arrays: [], templateLength: 0 }));
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: null,
+      endDate: null,
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+  test('should resetTimes return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(resetTimes());
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: null,
+      endDate: null,
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+  test('should autoCompleteTimes return data', () => {
+    const store = configureStore({ reducer: daysSlice.reducer });
+    store.dispatch(autoCompleteTimes([]));
+    expect(store.getState()).toEqual({
+      period: 0,
+      days: [],
+      times: [],
+      startDate: null,
+      endDate: null,
+      isAutoComplete: false,
+      template: [],
+      templateLength: 0,
+    });
+  });
+});

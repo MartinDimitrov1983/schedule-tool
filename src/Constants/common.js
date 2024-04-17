@@ -11,4 +11,4 @@ export const RESET = 'Reset';
 export const AUTOCOMPLETE = 'Autocomplete';
 export const UPLOAD = 'Upload';
 export const CREATE_NEW_SCHEDULE = 'Create New Schedule';
-export const CREATED_SUCCESSFULLY = '  Schedule successfully created.';
+export const CREATED_SUCCESSFULLY = 'Schedule successfully created.';
