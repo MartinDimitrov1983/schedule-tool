@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Card 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-14t9pl7"
+  >
+    <div
+      class="MuiBox-root css-moyowv"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ndaqpv-MuiTypography-root"
+      />
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      />
+    </div>
+    <div
+      class="MuiBox-root css-3n8u8f"
+    />
+  </div>
+</DocumentFragment>
+`;

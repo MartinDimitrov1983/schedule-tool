@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot DayTimes 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="react-time-picker react-time-picker--closed react-time-picker--enabled autoComplete wrapper"
+    >
+      <div
+        class="react-time-picker__wrapper"
+      >
+        <div
+          class="react-time-picker__inputGroup"
+        >
+          <input
+            hidden=""
+            name="time"
+            step="60"
+            style="visibility: hidden; position: absolute; z-index: -999;"
+            type="time"
+            value=""
+          />
+          <input
+            autocomplete="off"
+            class="react-time-picker__inputGroup__input react-time-picker__inputGroup__hour"
+            data-input="true"
+            inputmode="numeric"
+            max="23"
+            min="0"
+            name="hour24"
+            placeholder="--"
+            type="number"
+            value=""
+          />
+          <span
+            class="react-time-picker__inputGroup__divider"
+          >
+            :
+          </span>
+          <input
+            autocomplete="off"
+            class="react-time-picker__inputGroup__input react-time-picker__inputGroup__minute"
+            data-input="true"
+            inputmode="numeric"
+            max="59"
+            min="0"
+            name="minute"
+            placeholder="--"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

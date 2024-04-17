@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot DatePicker 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-dvxtzn"
+  >
+    <p>
+      Test
+    </p>
+    <div
+      class="react-date-picker react-date-picker--closed react-date-picker--enabled datePicker"
+    >
+      <div
+        class="react-date-picker__wrapper"
+      >
+        <div
+          class="react-date-picker__inputGroup"
+        >
+          <input
+            hidden=""
+            max="275760-09-13"
+            min="0001-01-01"
+            name="date"
+            style="visibility: hidden; position: absolute; z-index: -999;"
+            type="date"
+            value=""
+          />
+          <input
+            autocomplete="off"
+            class="react-date-picker__inputGroup__input react-date-picker__inputGroup__day"
+            data-input="true"
+            inputmode="numeric"
+            max="31"
+            min="1"
+            name="day"
+            type="number"
+            value=""
+          />
+          <span
+            class="react-date-picker__inputGroup__divider"
+          >
+             
+          </span>
+          <input
+            autocomplete="off"
+            class="react-date-picker__inputGroup__input react-date-picker__inputGroup__month"
+            data-input="true"
+            inputmode="numeric"
+            max="12"
+            min="1"
+            name="month"
+            type="number"
+            value=""
+          />
+          <span
+            class="react-date-picker__inputGroup__divider"
+          >
+             
+          </span>
+          <input
+            autocomplete="off"
+            class="react-date-picker__inputGroup__input react-date-picker__inputGroup__year"
+            data-input="true"
+            inputmode="numeric"
+            max="275760"
+            min="1"
+            name="year"
+            step="1"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

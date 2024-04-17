@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot TimePicker 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="react-time-picker react-time-picker--closed react-time-picker--enabled completed wrapper"
+    >
+      <div
+        class="react-time-picker__wrapper"
+      >
+        <div
+          class="react-time-picker__inputGroup"
+        >
+          <input
+            hidden=""
+            name="time"
+            step="60"
+            style="visibility: hidden; position: absolute; z-index: -999;"
+            type="time"
+            value="12:00"
+          />
+          <input
+            autocomplete="off"
+            class="react-time-picker__inputGroup__input react-time-picker__inputGroup__hour"
+            data-input="true"
+            inputmode="numeric"
+            max="23"
+            min="0"
+            name="hour24"
+            placeholder="--"
+            type="number"
+            value="12"
+          />
+          <span
+            class="react-time-picker__inputGroup__divider"
+          >
+            :
+          </span>
+          <span
+            class="react-time-picker__inputGroup__leadingZero"
+          >
+            0
+          </span>
+          <input
+            autocomplete="off"
+            class="react-time-picker__inputGroup__input react-time-picker__inputGroup__minute react-time-picker__inputGroup__input--hasLeadingZero"
+            data-input="true"
+            inputmode="numeric"
+            max="59"
+            min="0"
+            name="minute"
+            placeholder="--"
+            type="number"
+            value="0"
+          />
+        </div>
+      </div>
+    </div>
+    <svg
+      class="icon completed"
+    >
+      close.svg
+    </svg>
+  </div>
+</DocumentFragment>
+`;
