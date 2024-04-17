@@ -31,8 +31,7 @@ const Days = ({
             daysToShow.length,
             (daysToShow.length / WEEK_LENGTH) * 100,
             showCopies,
-          )}
-        >
+          )}>
           {daysToShow.length > 0 &&
             daysToShow.map((data, index) => {
               return (
@@ -59,22 +58,23 @@ const Days = ({
                   array.length,
                   (array.length / WEEK_LENGTH) * 100,
                   showCopies,
-                )}
-              >
+                )}>
                 {array.map((data, index) => {
                   return (
                     <Card
                       key={`${arrayIndex}-${index}`}
                       day={
-                        days[arrayIndex * array.length + index + startDateCount]
-                          ?.day
+                        days[
+                          arrayIndex * templateLength + index + startDateCount
+                        ]?.day
                       }
                       date={convertDate(
-                        days[arrayIndex * array.length + index + startDateCount]
-                          ?.date,
+                        days[
+                          arrayIndex * templateLength + index + startDateCount
+                        ]?.date,
                       )}
                       dayIndex={
-                        arrayIndex * array.length + index + startDateCount
+                        arrayIndex * templateLength + index + startDateCount
                       }
                       isTemplate={arrayIndex === 0}
                       autoCompleteData={data}
