@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box, Typography } from '@mui/material';
@@ -9,9 +9,9 @@ import {
   changeEndDate,
   changeDays,
 } from '../../../Redux/slices/days';
-import { formatDate, getDatesAndDays } from '../../../Utils';
+import { formatDate, getDatesAndDays, calculateEndDate } from '../../../Utils';
 import { DAYS, END_DATE, START_DATE, WEEK_LENGTH } from '../../../Constants';
-//calculateEndDate
+
 import styles from './styles';
 
 const DateSelector = ({
@@ -23,12 +23,23 @@ const DateSelector = ({
   const startDate = useSelector((state) => state.days.startDate);
   const endDate = useSelector((state) => state.days.endDate);
   const days = useSelector((state) => state.days.days);
+  // const refDays = useRef(days.length);
 
+  // if (refDays.current === 0) {
+  //   refDays.current = days.length;
+  // }
+
+  // console.log('ref', refDays.current);
   const dispatch = useDispatch();
 
   const startDateHandler = (value) => {
     const formatedDate = formatDate(value);
-
+    // let newEndDate;
+    // if (days.length > 0) {
+    //   newEndDate = calculateEndDate(formatedDate, refDays.current.length - 1);
+    //   dispatch(changeEndDate(formatDate(newEndDate)));
+    // }
+    // const realEndDate = newEndDate ? newEndDate : endDate;
     dispatch(changeStartDate(formatedDate));
     dispatch(changeDays(getDatesAndDays(formatedDate, endDate)));
   };

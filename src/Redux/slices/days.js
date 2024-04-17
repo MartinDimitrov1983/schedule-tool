@@ -23,7 +23,6 @@ export const daysSlice = createSlice({
     },
     changeDays: (state, action) => {
       state.days = action.payload;
-      console.log('Times length', state.times.length);
       if (state.times.length === 0) {
         state.times.length = state.days.length;
         state.times = state.times.fill([]);

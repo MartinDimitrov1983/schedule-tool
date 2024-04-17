@@ -57,8 +57,7 @@ const Card = ({ day, date, dayIndex, isTemplate, autoCompleteData }) => {
       sx={styles.wrapper}
       onClick={clickCardHandler}
       onMouseLeave={mouseLeaveHandler}
-      onMouseEnter={mouseEnterHandler}
-    >
+      onMouseEnter={mouseEnterHandler}>
       <Box sx={styles.header}>
         <Typography sx={styles.day}>{day}</Typography>
         <Typography>{date}</Typography>
@@ -74,7 +73,7 @@ const Card = ({ day, date, dayIndex, isTemplate, autoCompleteData }) => {
                 dayIndex={dayIndex}
                 timeIndex={index}
                 removeHandler={() => removeHandler(time.id, index)}
-                autocompleteData={autoCompleteData}
+                autocompleteData={autoCompleteData?.[index]}
               />
             );
           })}

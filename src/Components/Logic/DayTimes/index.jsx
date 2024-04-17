@@ -38,7 +38,7 @@ DayTimes.propTypes = {
   dayIndex: PropTypes.number,
   timeIndex: PropTypes.number,
   removeHandler: PropTypes.func,
-  autocompleteData: PropTypes.array,
+  autocompleteData: PropTypes.string,
 };
 
 export default DayTimes;
